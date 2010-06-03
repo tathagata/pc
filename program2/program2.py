@@ -1,6 +1,7 @@
 #!/usr/bin/python
 """ Minesweeper
 """
+from array import array
 file = open('siminesweepertest.txt', 'r')
 
 #print file.read()
@@ -13,19 +14,12 @@ while 1:
     	else:
 		if row.isdigit():
 			col = file.read(3)
-			print col
-			if not col:
-				break
-			else:
-				a = []
-				for i in xrange(int(row)):
-					a.append([])
-					for j in xrange(int(col)+1):
-						char = file.read(1)
-						#print char
-						if char == '*' or char =='.':
-							a[i].append(char)
-			#b = [[] for i in range(col)]
-				
-
+			x = []
+			for i in xrange(int(row)):
+				x.append([])
+				for j in xrange(int(col)+1):
+					char = file.read(1)
+					if char == '*' or char == '.':
+						x[i].append(char)
+			print x	 	
 file.close()
