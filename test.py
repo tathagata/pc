@@ -6,3 +6,4 @@ class test:
 
 test = test(10)
 print test.number
+print test.number
