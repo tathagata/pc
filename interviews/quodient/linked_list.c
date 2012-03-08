@@ -25,9 +25,9 @@ void print_list(node *n){
 
 
 void reverse_list(node *n){
-	node *temp = (node *)malloc(sizeof(node));
-	node *prev = (node *)malloc(sizeof(node));
-	node *a = (node *)malloc(sizeof(node));
+	if (n==NULL)
+		return;
+	node *temp, *prev, *a;
 	temp = n;
 	prev = NULL;
 	while(temp->next!=NULL){
@@ -37,7 +37,6 @@ void reverse_list(node *n){
 		temp=a;
 	}
 	temp->next=prev;
-	print_list(temp);
 	return;
 }
 
@@ -55,7 +54,9 @@ int main(int argc, const char *argv[]){
 		temp=temp->next;
 	}
 	
-	reverse_list(head);	
+	reverse_list(head);
+	
+	print_list(temp);
 	return 0;
 }
 
